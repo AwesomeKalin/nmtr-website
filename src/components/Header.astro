@@ -1,0 +1,76 @@
+---
+//@ts-ignore
+import Hamburger from "./icons/Hamburger.astro";
+---
+
+<header class="bg-[#bbbbff] text-white">
+    <div class="@container max-w-full">
+        <!-- Hidden checkbox toggle -->
+        <input id="menu-toggle" type="checkbox" class="peer hidden" />
+
+        <div class="flex items-center justify-between p-2">
+            <!-- Logo / Home -->
+            <a href="home.html" class="py-3 px-4 bg-[#77f] text-[17px]">
+                Home
+            </a>
+
+            <!-- Hamburger (mobile only) -->
+            <label
+                for="menu-toggle"
+                class="cursor-pointer block @min-[600px]:hidden p-3"
+            >
+                <Hamburger class="w-6 h-6" />
+            </label>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden @min-[600px]:flex space-x-2">
+                <a
+                    href="http://mc.novamtr.org:8888"
+                    class="py-3 px-4 hover:bg-[#77f]">System Map</a
+                >
+                <a
+                    href="http://mc.novamtr.org:8080"
+                    class="py-3 px-4 hover:bg-[#77f]">Square Map</a
+                >
+                <a
+                    href="https://novamtr.miraheze.org"
+                    class="py-3 px-4 hover:bg-[#77f]">Wiki</a
+                >
+                <a
+                    href="https://www.youtube.com/@NovaMTR"
+                    class="py-3 px-4 hover:bg-[#77f]">YouTube</a
+                >
+                <a
+                    href="https://discord.gg/NawCaMFnjr"
+                    class="py-3 px-4 hover:bg-[#77f]">Discord</a
+                >
+            </nav>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav
+            class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-all duration-300 @min-[600px]:hidden flex flex-col"
+        >
+            <a
+                href="http://mc.novamtr.org:8888"
+                class="py-3 px-4 hover:bg-[#77f] text-left">System Map</a
+            >
+            <a
+                href="http://mc.novamtr.org:8080"
+                class="py-3 px-4 hover:bg-[#77f] text-left">Square Map</a
+            >
+            <a
+                href="https://novamtr.miraheze.org"
+                class="py-3 px-4 hover:bg-[#77f] text-left">Wiki</a
+            >
+            <a
+                href="https://www.youtube.com/@NovaMTR"
+                class="py-3 px-4 hover:bg-[#77f] text-left">YouTube</a
+            >
+            <a
+                href="https://discord.gg/NawCaMFnjr"
+                class="py-3 px-4 hover:bg-[#77f] text-left">Discord</a
+            >
+        </nav>
+    </div>
+</header>
