@@ -1,7 +1,216 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+
+import { Picture } from "astro:assets";
+import morganBay from "../img/morganbay.png";
+import hoWingKokPier from "../img/howingkokpier.png";
+import concurrent from "../img/concurrent.png";
+import milbourne from "../img/milbourne.png";
 ---
 
 <Layout>
-    <h1>Hello from Astro</h1>
+    <Banner />
+    <div
+        class="m-auto text-left text-[1.75vw] @min-[1001px]:text-[40px] @min-[1401px]:text-[30px] w-4/5 px-[4vw] bg-fuchsia-50 border-5 border-solid border-fuchsia-300 transition duration-300 font-extrabold"
+    >
+        <h1
+            class="font-[Trebuchet MS, serif] text-[#ff77ff] [font-variant:small-caps] block text-[3em] my-[0.67em] mx-0 font-bold [unicode-bidi:isolate]"
+        >
+            Your journey begins here
+        </h1>
+
+        <Picture
+            src={morganBay}
+            formats={["avif", "webp", "jpeg"]}
+            layout="constrained"
+            alt="Morgan Bay Station, designed and built by TribalKing2025"
+            class="ml-25 w-full max-w-150 max-h-100 rounded-[5px] cursor-pointer transition duration-300 object-cover float-right border-5 border-solid border-fuchsia-300 hover:opacity-[0.7]"
+        />
+
+        <h2
+            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0 font-bold [unicode-bidi:isolate]"
+        >
+            Introduction
+        </h2>
+
+        <p
+            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
+        >
+            Hi, welcome to NovaMTR! We're a small little server based on the
+            Minecraft Transit Railway mod! Here you can meet new people and
+            freely express yourselves, and have fun playing on the server!
+            (Probably)
+        </p>
+        <br />
+
+        <Picture
+            src={hoWingKokPier}
+            formats={["avif", "webp", "jpeg"]}
+            layout="constrained"
+            alt="Ho Wing Kok Pier Station, built by Curt"
+            class="ml-25 w-full max-w-150 max-h-100 rounded-[5px] cursor-pointer transition duration-300 object-cover float-right border-5 border-solid border-fuchsia-300 hover:opacity-[0.7]"
+        />
+
+        <h2
+            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0 font-bold [unicode-bidi:isolate]"
+        >
+            Our network
+        </h2>
+        <p
+            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
+        >
+            Starting since July of 2025, we've been rapidly expanding since! The
+            amount of railways and transports in our MTR server is big enough to
+            serve the best cities in the world, and in some cases bigger than
+            other MTR servers!
+        </p>
+        <br />
+
+        <Picture
+            src={concurrent}
+            formats={["avif", "webp", "jpeg"]}
+            layout="constrained"
+            alt="Screenshot taken, celebrating the 11 concurrent players mark."
+            class="ml-25 w-full max-w-150 max-h-100 rounded-[5px] cursor-pointer transition duration-300 object-cover float-right border-5 border-solid border-fuchsia-300 hover:opacity-[0.7]"
+        />
+
+        <h2
+            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0 font-bold [unicode-bidi:isolate]"
+        >
+            Our community
+        </h2>
+        <p
+            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
+        >
+            Our LGBTQ+ friendly community allows people all across the globe to
+            talk to each other safely! Here you can have discussions in forums,
+            showcase your Minecraft builds and many more!
+        </p>
+        <br />
+
+        <Picture
+            src={milbourne}
+            formats={["avif", "webp", "jpeg"]}
+            layout="constrained"
+            alt="Screenshot taken along the Milbourne Line, built by Curt"
+            class="ml-25 w-full max-w-150 max-h-100 rounded-[5px] cursor-pointer transition duration-300 object-cover float-right border-5 border-solid border-fuchsia-300 hover:opacity-[0.7]"
+        />
+
+        <h2
+            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0 font-bold [unicode-bidi:isolate]"
+        >
+            Becoming a builder
+        </h2>
+        <p
+            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
+        >
+            We'd be glad for you to become part of our buider team! You can
+            apply for a builder application, and if we approve it, showcase your
+            skills in a build test, taken place within our Minecraft server!
+        </p>
+        <br />
+
+        <iframe
+            height="400"
+            src="http://squaremap.novamtr.org"
+            class="float-right text-center border-5 border-solid border-fuchsia-300 max-w-150 max-h-100 w-full"
+            title="Squaremap"
+            loading="lazy"></iframe>
+
+        <h2
+            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0
+        font-bold [unicode-bidi:isolate]"
+        >
+            Our dynamic square map
+        </h2>
+        <p
+            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
+        >
+            Our dynamic square map allows you to view the whole NMTR world,
+            including markers where stations are! This could be very helpful for
+            planning where to build your next transport line.
+        </p>
+        <br />
+
+        <a
+            class="text-black flex justify-center"
+            href="http://squaremap.novamtr.org"
+            ><div
+                class="bg-[#ffbbff] p-5 w-75 text-center transition duration-300 mb-5 @max-[1000px]:w-4/5 @max-[1000px]:m-auto hover:bg-[#eeaaee]"
+            >
+                See in full screen...
+            </div></a
+        >
+        <br />
+
+        <iframe
+            height="400"
+            src="http://system-map.novamtr.org"
+            class="float-right text-center border-5 border-solid border-fuchsia-300 max-w-150 max-h-100 w-full"
+            title="System Map"
+            loading="lazy"></iframe>
+
+        <h2
+            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0
+        font-bold [unicode-bidi:isolate]"
+        >
+            Our dynamic system map
+        </h2>
+
+        <p
+            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
+        >
+            Our dynamic system map allows you to view the whole NMTR network in
+            full, while keeping the interface clean and readable!
+        </p>
+        <br /><br /><br />
+
+        <a
+            class="text-black flex justify-center"
+            href="http://system-map.novamtr.org"
+            ><div
+                class="bg-[#ffbbff] p-5 w-75 text-center transition duration-300 mb-5 @max-[1000px]:w-4/5 @max-[1000px]:m-auto hover:bg-[#eeaaee]"
+            >
+                See in full screen...
+            </div></a
+        >
+        <br />
+
+        <iframe
+            class="float-right text-center border-5 border-solid border-fuchsia-300 max-w-140 max-h-78.75 w-full"
+            width="560"
+            height="315"
+            referrerpolicy="strict-origin-when-cross-origin"
+            src="https://www.youtube-nocookie.com/embed/6ijTozc-Mtc"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            title="YouTube Channel"
+            loading="lazy"></iframe>
+
+        <h2
+            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0
+        font-bold [unicode-bidi:isolate]"
+        >
+            Our YouTube channel
+        </h2>
+        <p
+            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
+        >
+            In case you don't know, we have a YouTube channel! Here we post
+            timelapses, cab rides and many more.
+        </p>
+        <br /><br /><br />
+
+        <a
+            class="text-black flex justify-center"
+            href="https://www.youtube.com/@NovaMTR"
+            ><div
+                class="bg-[#ffbbff] p-5 w-75 text-center transition duration-300 mb-5 @max-[1000px]:w-4/5 @max-[1000px]:m-auto hover:bg-[#eeaaee]"
+            >
+                Check it out!
+            </div></a
+        >
+    </div>
 </Layout>

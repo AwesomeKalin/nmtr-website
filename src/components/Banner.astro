@@ -1,0 +1,23 @@
+---
+import { Picture, getImage } from "astro:assets";
+import banner from "../img/banner.png";
+import bannerlogo from "../img/bannerlogo.png";
+
+const optimizedBanner = await getImage({
+    src: banner,
+});
+---
+
+<div
+    class="flex justify-center bg-cover bg-bottom bg-no-repeat p-12.5"
+    style={`background-image: url(${optimizedBanner.src});`}
+>
+    <Picture
+        src={bannerlogo}
+        formats={["avif", "webp", "png"]}
+        layout="constrained"
+        alt="NovaMTR logo"
+        class="w-1/2"
+        loading="eagerly"
+    />
+</div>
