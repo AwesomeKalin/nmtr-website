@@ -1,0 +1,33 @@
+---
+const props = Astro.props;
+---
+
+<iframe
+    height="400"
+    src={props.iframeSrc}
+    class="float-right text-center border-5 border-solid border-fuchsia-300 max-w-150 max-h-100 w-full"
+    title={props.iframeTitle}
+    loading="lazy"></iframe>
+
+<h2
+    class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0
+        font-bold [unicode-bidi:isolate]"
+>
+    {props.title}
+</h2>
+<p
+    class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
+>
+    <slot />
+</p>
+
+{Array.from({ length: props.extraBreaks }).map(() => <br />)}
+
+<a class="text-black flex justify-center" href={props.link}
+    ><div
+        class="bg-[#ffbbff] p-5 w-75 text-center transition duration-300 mb-5 @max-[1000px]:w-4/5 @max-[1000px]:m-auto hover:bg-[#eeaaee]"
+    >
+        See in full screen...
+    </div></a
+>
+<br />

@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Banner from "../components/Banner.astro";
+import ImageWithText from "../components/ImageWithText.astro";
+import TextWithIframe from "../components/TextWithIframe.astro";
 
-import { Picture } from "astro:assets";
 import morganBay from "../img/morganbay.png";
 import hoWingKokPier from "../img/howingkokpier.png";
 import concurrent from "../img/concurrent.png";
@@ -20,162 +21,64 @@ import milbourne from "../img/milbourne.png";
             Your journey begins here
         </h1>
 
-        <Picture
-            src={morganBay}
-            formats={["avif", "webp", "jpeg"]}
-            layout="constrained"
+        <ImageWithText
+            title="Introduction"
+            img={morganBay}
             alt="Morgan Bay Station, designed and built by TribalKing2025"
-            class="ml-25 w-full max-w-150 max-h-100 rounded-[5px] cursor-pointer transition duration-300 object-cover float-right border-5 border-solid border-fuchsia-300 hover:opacity-[0.7]"
-        />
-
-        <h2
-            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0 font-bold [unicode-bidi:isolate]"
-        >
-            Introduction
-        </h2>
-
-        <p
-            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
-        >
-            Hi, welcome to NovaMTR! We're a small little server based on the
+            >Hi, welcome to NovaMTR! We're a small little server based on the
             Minecraft Transit Railway mod! Here you can meet new people and
             freely express yourselves, and have fun playing on the server!
-            (Probably)
-        </p>
-        <br />
+            (Probably)</ImageWithText
+        >
 
-        <Picture
-            src={hoWingKokPier}
-            formats={["avif", "webp", "jpeg"]}
-            layout="constrained"
+        <ImageWithText
+            title="Our network"
+            img={hoWingKokPier}
             alt="Ho Wing Kok Pier Station, built by Curt"
-            class="ml-25 w-full max-w-150 max-h-100 rounded-[5px] cursor-pointer transition duration-300 object-cover float-right border-5 border-solid border-fuchsia-300 hover:opacity-[0.7]"
-        />
+            >Starting since July of 2025, we've been rapidly expanding since!
+            The amount of railways and transports in our MTR server is big
+            enough to serve the best cities in the world, and in some cases
+            bigger than other MTR servers!</ImageWithText
+        >
 
-        <h2
-            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0 font-bold [unicode-bidi:isolate]"
-        >
-            Our network
-        </h2>
-        <p
-            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
-        >
-            Starting since July of 2025, we've been rapidly expanding since! The
-            amount of railways and transports in our MTR server is big enough to
-            serve the best cities in the world, and in some cases bigger than
-            other MTR servers!
-        </p>
-        <br />
-
-        <Picture
-            src={concurrent}
-            formats={["avif", "webp", "jpeg"]}
-            layout="constrained"
-            alt="Screenshot taken, celebrating the 11 concurrent players mark."
-            class="ml-25 w-full max-w-150 max-h-100 rounded-[5px] cursor-pointer transition duration-300 object-cover float-right border-5 border-solid border-fuchsia-300 hover:opacity-[0.7]"
-        />
-
-        <h2
-            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0 font-bold [unicode-bidi:isolate]"
-        >
-            Our community
-        </h2>
-        <p
-            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
-        >
-            Our LGBTQ+ friendly community allows people all across the globe to
+        <ImageWithText
+            title="Our community"
+            img={concurrent}
+            alt="Screenshot taken, celebrating the 11 concurrent players mark"
+            >Our LGBTQ+ friendly community allows people all across the globe to
             talk to each other safely! Here you can have discussions in forums,
-            showcase your Minecraft builds and many more!
-        </p>
-        <br />
+            showcase your Minecraft builds and many more!</ImageWithText
+        >
 
-        <Picture
-            src={milbourne}
-            formats={["avif", "webp", "jpeg"]}
-            layout="constrained"
+        <ImageWithText
+            title="Becoming a builder"
+            img={milbourne}
             alt="Screenshot taken along the Milbourne Line, built by Curt"
-            class="ml-25 w-full max-w-150 max-h-100 rounded-[5px] cursor-pointer transition duration-300 object-cover float-right border-5 border-solid border-fuchsia-300 hover:opacity-[0.7]"
-        />
-
-        <h2
-            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0 font-bold [unicode-bidi:isolate]"
-        >
-            Becoming a builder
-        </h2>
-        <p
-            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
-        >
-            We'd be glad for you to become part of our buider team! You can
+            >We'd be glad for you to become part of our buider team! You can
             apply for a builder application, and if we approve it, showcase your
-            skills in a build test, taken place within our Minecraft server!
-        </p>
-        <br />
-
-        <iframe
-            height="400"
-            src="http://squaremap.novamtr.org"
-            class="float-right text-center border-5 border-solid border-fuchsia-300 max-w-150 max-h-100 w-full"
-            title="Squaremap"
-            loading="lazy"></iframe>
-
-        <h2
-            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0
-        font-bold [unicode-bidi:isolate]"
+            skills in a build test, taken place within our Minecraft server!</ImageWithText
         >
-            Our dynamic square map
-        </h2>
-        <p
-            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
-        >
-            Our dynamic square map allows you to view the whole NMTR world,
+
+        <TextWithIframe
+            title="Our dynamic square map"
+            iframeSrc="http://squaremap.novamtr.org"
+            iframeTitle="Squaremap"
+            link="http://squaremap.novamtr.org"
+            extraBreaks={1}
+            >Our dynamic square map allows you to view the whole NMTR world,
             including markers where stations are! This could be very helpful for
-            planning where to build your next transport line.
-        </p>
-        <br />
-
-        <a
-            class="text-black flex justify-center"
-            href="http://squaremap.novamtr.org"
-            ><div
-                class="bg-[#ffbbff] p-5 w-75 text-center transition duration-300 mb-5 @max-[1000px]:w-4/5 @max-[1000px]:m-auto hover:bg-[#eeaaee]"
-            >
-                See in full screen...
-            </div></a
+            planning where to build your next transport line.</TextWithIframe
         >
-        <br />
 
-        <iframe
-            height="400"
-            src="http://system-map.novamtr.org"
-            class="float-right text-center border-5 border-solid border-fuchsia-300 max-w-150 max-h-100 w-full"
-            title="System Map"
-            loading="lazy"></iframe>
-
-        <h2
-            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0
-        font-bold [unicode-bidi:isolate]"
+        <TextWithIframe
+            title="Our dynamic system map"
+            iframeSrc="http://system-map.novamtr.org"
+            iframeTitle="System Map"
+            link="http://system-map.novamtr.org"
+            extraBreaks={3}
+            >Our dynamic system map allows you to view the whole NMTR network in
+            full, while keeping the interface clean and readable!</TextWithIframe
         >
-            Our dynamic system map
-        </h2>
-
-        <p
-            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
-        >
-            Our dynamic system map allows you to view the whole NMTR network in
-            full, while keeping the interface clean and readable!
-        </p>
-        <br /><br /><br />
-
-        <a
-            class="text-black flex justify-center"
-            href="http://system-map.novamtr.org"
-            ><div
-                class="bg-[#ffbbff] p-5 w-75 text-center transition duration-300 mb-5 @max-[1000px]:w-4/5 @max-[1000px]:m-auto hover:bg-[#eeaaee]"
-            >
-                See in full screen...
-            </div></a
-        >
-        <br />
 
         <iframe
             class="float-right text-center border-5 border-solid border-fuchsia-300 max-w-140 max-h-78.75 w-full"
