@@ -1,76 +1,141 @@
 ---
-//@ts-ignore
-import Hamburger from "./icons/Hamburger.astro";
+import { FontAwesomeIcon } from "astro-fontawesome";
+import { faHome, faBookmark, faMap } from "@fortawesome/free-regular-svg-icons";
+import {
+    faMagnifyingGlass,
+    faLocationDot,
+    faMapPin,
+    faUserPlus,
+    faBars,
+} from "@fortawesome/free-solid-svg-icons";
+import "../fontawesome";
 ---
 
-<header class="bg-[#bbbbff] text-white">
+<header class="overflow-hidden bg-[#676767]">
     <div class="@container max-w-full">
         <!-- Hidden checkbox toggle -->
         <input id="menu-toggle" type="checkbox" class="peer hidden" />
 
         <div class="flex items-center justify-between p-2">
-            <!-- Logo / Home -->
-            <a href="home.html" class="py-3 px-4 bg-[#77f] text-[17px]">
-                Home
-            </a>
-
             <!-- Hamburger (mobile only) -->
             <label
                 for="menu-toggle"
                 class="cursor-pointer block @min-[600px]:hidden p-3"
             >
-                <Hamburger class="w-6 h-6" />
+                <FontAwesomeIcon icon={faBars} />
             </label>
 
             <!-- Desktop Menu -->
             <nav class="hidden @min-[600px]:flex space-x-2">
-                <a
-                    href="http://system-map.novamtr.org"
-                    class="py-3 px-4 hover:bg-[#77f]">System Map</a
-                >
-                <a
-                    href="http://squaremap.novamtr.org"
-                    class="py-3 px-4 hover:bg-[#77f]">Square Map</a
-                >
-                <a
-                    href="https://wiki.novamtr.org"
-                    class="py-3 px-4 hover:bg-[#77f]">Wiki</a
-                >
-                <a
-                    href="https://www.youtube.com/@NovaMTR"
-                    class="py-3 px-4 hover:bg-[#77f]">YouTube</a
-                >
-                <a
-                    href="https://discord.gg/NawCaMFnjr"
-                    class="py-3 px-4 hover:bg-[#77f]">Discord</a
-                >
+                <ul>
+                    <li class="float-left">
+                        <a
+                            href="/"
+                            class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                            ><FontAwesomeIcon icon={faHome} /> Home</a
+                        >
+                    </li>
+                    <li class="float-left">
+                        <a
+                            href="/about"
+                            class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                            ><FontAwesomeIcon icon={faMagnifyingGlass} /> About</a
+                        >
+                    </li>
+                    <li class="float-left">
+                        <a
+                            href="/stations"
+                            class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                            ><FontAwesomeIcon icon={faLocationDot} /> Stations</a
+                        >
+                    </li>
+                    <li class="float-left">
+                        <a
+                            href="https://wiki.novamtr.org"
+                            class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                            ><FontAwesomeIcon icon={faBookmark} /> Wiki</a
+                        >
+                    </li>
+                    <li class="float-left">
+                        <a
+                            href="https://squaremap.novamtr.org"
+                            class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                            ><FontAwesomeIcon icon={faMap} /> System Map</a
+                        >
+                    </li>
+                    <li class="float-left">
+                        <a
+                            href="http://system-map.novamtr.org"
+                            class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                            ><FontAwesomeIcon icon={faMapPin} /> Squaremap</a
+                        >
+                    </li>
+                    <li class="float-left">
+                        <a
+                            href="index.html#join"
+                            class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 bg-[cornflowerblue] text-center text-[20px] hover:bg-[skyblue]"
+                            ><FontAwesomeIcon icon={faUserPlus} /> Join now!</a
+                        >
+                    </li>
+                </ul>
             </nav>
         </div>
 
         <!-- Mobile Menu -->
         <nav
-            class="max-h-0 overflow-hidden peer-checked:max-h-96 transition-all duration-300 @min-[600px]:hidden flex flex-col"
+            class="max-h-0 overflow-hidden peer-checked:max-h-160 transition-all duration-300 @min-[600px]:hidden flex flex-col"
         >
-            <a
-                href="http://system-map.novamtr.org"
-                class="py-3 px-4 hover:bg-[#77f] text-left">System Map</a
-            >
-            <a
-                href="http://squaremap.novamtr.org"
-                class="py-3 px-4 hover:bg-[#77f] text-left">Square Map</a
-            >
-            <a
-                href="https://wiki.novamtr.org"
-                class="py-3 px-4 hover:bg-[#77f] text-left">Wiki</a
-            >
-            <a
-                href="https://www.youtube.com/@NovaMTR"
-                class="py-3 px-4 hover:bg-[#77f] text-left">YouTube</a
-            >
-            <a
-                href="https://discord.gg/NawCaMFnjr"
-                class="py-3 px-4 hover:bg-[#77f] text-left">Discord</a
-            >
+            <ul>
+                <li>
+                    <a
+                        href="/"
+                        class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                        ><FontAwesomeIcon icon={faHome} /> Home</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/about"
+                        class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                        ><FontAwesomeIcon icon={faMagnifyingGlass} /> About</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="/stations"
+                        class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                        ><FontAwesomeIcon icon={faLocationDot} /> Stations</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://wiki.novamtr.org"
+                        class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                        ><FontAwesomeIcon icon={faBookmark} /> Wiki</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://squaremap.novamtr.org"
+                        class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                        ><FontAwesomeIcon icon={faMap} /> System Map</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="http://system-map.novamtr.org"
+                        class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 hover:bg-[gray] hover:rounded-[50px] hover:text-[lightgreen]"
+                        ><FontAwesomeIcon icon={faMapPin} /> Squaremap</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="index.html#join"
+                        class="block p-7.5 my-0 mx-5 font-(family-name:--font-archivo) sticky z-1000 bg-[cornflowerblue] text-center text-[20px] hover:bg-[skyblue] mt-2.5 mb-5"
+                        ><FontAwesomeIcon icon={faUserPlus} /> Join now!</a
+                    >
+                </li>
+            </ul>
         </nav>
     </div>
 </header>

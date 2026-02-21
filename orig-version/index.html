@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- PAGE META & GLOBAL ASSETS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NovaMTR - Home</title>
+
+  <!-- MAIN STYLESHEET FOR HOME PAGE -->
+  <link rel="stylesheet" href="main.css">
+
+  <!-- FONT LOADING -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&family=Poppins:wght@100..900&family=Atkinson+Hyperlegible+Next:wght@200..800&display=swap" rel="stylesheet">
+
+  <!-- ICON FONT (FONT AWESOME) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR / GLOBAL SITE NAVIGATION -->
+<ul>
+  <li><a href="index.html" class="current"><i class="fa fa-home"></i> Home</a></li>
+  <li><a href="about.html"><i class="fa fa-search"></i> About</a></li>
+  <li><a href="stations.html"><i class="fa fa-map-marker"></i> Stations</a></li>
+  <li><a href="https://wiki.novamtr.org"><i class="fa fa-bookmark"></i> Wiki</a></li>
+  <li><a href="https://squaremap.novamtr.org"><i class="fa fa-map"></i> System Map</a></li>
+  <li><a href="http://system-map.novamtr.org"><i class="fa fa-map-pin"></i> Squaremap</a></li>
+  <li><a href="index.html#join" class="join_blue"><i class="fa fa-user-plus"></i> Join now!</a></li>
+</ul>
+
+<!-- HERO / LANDING BANNER -->
+<div class="poas fade-in">
+  <img src="Expo.png" alt="Expo Station">
+  <h2 class="centered">Welcome to NovaMTR!</h2>
+</div>
+
+<!-- INTRO 1 / SERVER DESCRIPTION BLOCK -->
+<div class="container slide-left fade-in">
+  <img src="JGardens.png" alt="Jacaranda Gardens">
+  <div class="centere-a">
+    <h2 class="larger">What are we?</h2>
+    <p class="largerp">
+      We are a fun and loving Minecraft server using MTR 4.<br>
+      We aim to create an enjoyable, safe and fun server both on Minecraft and Discord!<br>
+      Join us today using the links below.
+    </p>
+  </div>
+</div>
+
+<!-- INTRO 2 / JOIN CALL-TO-ACTION SECTION -->
+<div id="join" class="containerright slide-right fade-in">
+  <img src="KirasuiGardens.png" alt="Kirasui Gardens">
+  <div class="centere-a">
+    <h2 class="larger">Join today!</h2>
+    <p class="largerlink"><a href="https://discord.gg/NawCaMFnjr">Discord Link</a></p>
+    <h2 class="larger">Want to see more amazing photos?</h2>
+    <p class="largerlink">Join the Discord to see more!</p>
+  </div>
+</div>
+
+<!-- BOTTOM SECTION / QUICK LINKS TO KEY PAGES -->
+<div class="bottomlinkpage fade-in">
+
+  <!-- ROW OF FEATURED LINKS (STATIONS + SYSTEM MAP) -->
+  <div class="bottom-row">
+
+    <!-- STATIONS CARD -->
+    <a href="stations.html" class="bottombox bottoma">
+      <div class="overlay"></div>
+      <div class="bottom-content">
+        <h2 class="larger">Stations</h2>
+        <p class="largerp">Check out some cherry picked stations from our builders!</p>
+        <p class="largerp">Use the System Map or Squaremap to locate them.</p>
+        <p class="largerp">Updated frequently as more stations are built.</p>
+      </div>
+    </a>
+
+    <!-- SYSTEM MAP CARD -->
+    <a href="systemmap.html" class="bottombox bottomb">
+      <div class="overlay"></div>
+      <div class="bottom-content">
+        <h2 class="larger">System Map</h2>
+        <p class="largerp">Lost in our server? No worries.</p>
+        <p class="largerp">This map is the key to all your issues.</p>
+        <p class="largerp">Explore, ride and discover unique stations.</p>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ABOUT PAGE CARD -->
+  <a href="about.html" class="bottombox bottomc bottom-full">
+    <div class="overlay"></div>
+    <div class="bottom-content">
+      <h2 class="larger">About</h2>
+      <p class="largerp">Who are we? What are we?</p>
+      <p class="largerp">Everything YOU need to know about NovaMTR.</p>
+      <p class="largerp">Our mission, our team, our vision.</p>
+    </div>
+  </a>
+
+</div>
+
+<!-- Fade-in script/image script / SCROLL-TRIGGERED ANIMATIONS -->
+<script>
+  const fadeElements = document.querySelectorAll('.fade-in');
+  const slideElements = document.querySelectorAll('.slide-left, .slide-right');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+
+      // Fade-in logic
+      if (entry.target.classList.contains('fade-in')) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      }
+
+      // Slide logic
+      if (entry.target.classList.contains('slide-left') ||
+          entry.target.classList.contains('slide-right')) {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-visible');
+        } else {
+          entry.target.classList.remove('slide-visible');
+        }
+      }
+
+    });
+  }, { threshold: 0.2 });
+
+  fadeElements.forEach(el => observer.observe(el));
+  slideElements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
