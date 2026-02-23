@@ -1,0 +1,14 @@
+---
+import Stations from "./bottomSection/Stations.astro";
+import SystemMap from "./bottomSection/SystemMap.astro";
+import About from "./bottomSection/About.astro";
+---
+
+<div class="flex flex-col gap-6.25 p-12.5 opacity-0 translate-y-6.25 transition-all duration-800 ease-out fade-in">
+    <!-- ROW OF FEATURED LINKS (STATIONS + SYSTEM MAP) -->
+    <div class="flex gap-6.25">
+        <Stations />
+        <SystemMap />
+    </div>
+    <About />
+</div>

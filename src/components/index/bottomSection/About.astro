@@ -1,0 +1,21 @@
+---
+import { getImage } from "astro:assets";
+import stPancake from "../../../img/st_pancake.png";
+
+const pancake = await getImage({
+    src: stPancake
+});
+---
+
+<a
+    href="/about"
+    class="flex-1 min-h-87.5 font-(family-name:--font-archivo) bg-cover bg-center relative flex align-[center] justify-center cursor-pointer w-full" style=`background-image: url(${pancake.src})`
+>
+    <div class="absolute inset-0 bg-black opacity-25 z-1"></div>
+    <div class="relative z-2 text-center p-5">
+        <h2 class="text-[45px]">About</h2>
+        <p class="text-[30px]">Who are we? What are we?</p>
+        <p class="text-[30px]">Everything YOU need to know about NovaMTR.</p>
+        <p class="text-[30px]">Our mission, our team, our vision.</p>
+    </div>
+</a>

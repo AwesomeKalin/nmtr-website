@@ -1,76 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Banner from "../components/Banner.astro";
-import ImageWithText from "../components/ImageWithText.astro";
-import TextWithIframe from "../components/TextWithIframe.astro";
+import Banner from "../components/index/Banner.astro";
+import Description from "../components/index/Description.astro";
+import C2A from "../components/index/C2A.astro";
+import BottomSection from "../components/index/BottomSection.astro";
 ---
 
 <Layout title="Home">
     <Banner />
-    <div
-        class="m-auto text-left text-[1.75vw] @min-[1001px]:text-[40px] @min-[1401px]:text-[30px] w-4/5 px-[4vw] bg-fuchsia-50 border-5 border-solid border-fuchsia-300 transition duration-300 font-extrabold"
-    >
-        <h1
-            class="font-[Trebuchet MS, serif] text-[#ff77ff] [font-variant:small-caps] block text-[3em] my-[0.67em] mx-0 font-bold [unicode-bidi:isolate]"
-        >
-            Your journey begins here
-        </h1>
-
-        <TextWithIframe
-            title="Our dynamic square map"
-            iframeSrc="http://squaremap.novamtr.org"
-            iframeTitle="Squaremap"
-            link="http://squaremap.novamtr.org"
-            extraBreaks={1}
-            >Our dynamic square map allows you to view the whole NMTR world,
-            including markers where stations are! This could be very helpful for
-            planning where to build your next transport line.</TextWithIframe
-        >
-
-        <TextWithIframe
-            title="Our dynamic system map"
-            iframeSrc="http://system-map.novamtr.org"
-            iframeTitle="System Map"
-            link="http://system-map.novamtr.org"
-            extraBreaks={3}
-            >Our dynamic system map allows you to view the whole NMTR network in
-            full, while keeping the interface clean and readable!</TextWithIframe
-        >
-
-        <iframe
-            class="float-right text-center border-5 border-solid border-fuchsia-300 max-w-140 max-h-78.75 w-full"
-            width="560"
-            height="315"
-            referrerpolicy="strict-origin-when-cross-origin"
-            src="https://www.youtube-nocookie.com/embed/6ijTozc-Mtc"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            title="YouTube Channel"
-            loading="lazy"></iframe>
-
-        <h2
-            class="font-[Trebuchet MS, serif] text-[#7777ff] text-4xl my-[0.83em] mx-0
-        font-bold [unicode-bidi:isolate]"
-        >
-            Our YouTube channel
-        </h2>
-        <p
-            class="font-[Arial, sans-serif] text-[#777777] block my-[1em] mx-0 [unicode-bidi:isolate]"
-        >
-            In case you don't know, we have a YouTube channel! Here we post
-            timelapses, cab rides and many more.
-        </p>
-        <br /><br /><br />
-
-        <a
-            class="text-black flex justify-center"
-            href="https://www.youtube.com/@NovaMTR"
-            ><div
-                class="bg-[#ffbbff] p-5 w-75 text-center transition duration-300 mb-5 @max-[1000px]:w-4/5 @max-[1000px]:m-auto hover:bg-[#eeaaee]"
-            >
-                Check it out!
-            </div></a
-        >
-    </div>
+    <Description />
+    <C2A />
+    <BottomSection />
 </Layout>

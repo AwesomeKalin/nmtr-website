@@ -1,0 +1,18 @@
+---
+import { getImage } from "astro:assets";
+import naritasVolcano from "../../../img/naritas_volcano.png";
+
+const volcano = await getImage({
+    src: naritasVolcano
+});
+---
+
+<a href="https://system-map.novamtr.org" class="flex-1 min-h-87.5 font-(family-name:--font-archivo) bg-cover bg-center relative flex align-[center] justify-center cursor-pointer" style=`background-image: url(${volcano.src})`>
+    <div class="absolute inset-0 bg-black opacity-25 z-1"></div>
+    <div class="relative z-2 text-center p-5">
+        <h2 class="text-[45px]">System Map</h2>
+        <p class="text-[30px]">Lost in our server? No worries.</p>
+        <p class="text-[30px]">This map is the key to all your issues.</p>
+        <p class="text-[30px]">Explore, ride and discover unique stations.</p>
+    </div>
+</a>
