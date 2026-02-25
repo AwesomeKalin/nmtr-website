@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme inline {
+    --font-archivo: var(--font-archivo-google);
+    --font-poppins: var(--font-poppins-google);
+    --font-atkinson: var(--font-atkinson-google);
+}

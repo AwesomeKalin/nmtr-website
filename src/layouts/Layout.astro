@@ -15,11 +15,11 @@ const props = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>NovaMTR - {props.title}</title>
+		<Font cssVariable="--font-archivo-google" preload />
+		<Font cssVariable="--font-poppins-google" preload />
+		<Font cssVariable="--font-atkinson-google" preload />
 	</head>
-	<body class="text-white font-(family-name:--font-poppins)">
-		<Font cssVariable="--font-archivo" preload />
-		<Font cssVariable="--font-poppins" preload />
-		<Font cssVariable="--font-atkinson" preload />
+	<body class="text-white font-poppins">
 		<Header />
 		<slot />
 		<Footer />

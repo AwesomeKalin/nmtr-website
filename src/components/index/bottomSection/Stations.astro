@@ -7,14 +7,14 @@ const basehillImg = await getImage({
 })
 ---
 
-<a href="/stations" class="flex-1 min-h-87.5 font-(family-name:--font-archivo) bg-cover bg-center relative flex align-[center] justify-center cursor-pointer" style=`background-image: url(${basehillImg.src})`>
+<a href="/stations" class="flex-1 min-h-87.5 font-archivo bg-cover bg-center relative flex align-[center] justify-center cursor-pointer rounded-lg" style=`background-image: url(${basehillImg.src})`>
     <div class="absolute inset-0 bg-black opacity-25 z-1"></div>
     <div class="relative z-2 text-center p-5">
-        <h2 class="text-[45px]">Stations</h2>
+        <h2 class="text-[45px] font-bold">Stations</h2>
         <p class="text-[30px]">
             Check out some cherry picked stations from our builders!
-        </p>
-        <p class="text-[30px]">Use the System Map or Squaremap to locate them.</p>
+        </p><br />
+        <p class="text-[30px]">Use the System Map or Squaremap to locate them.</p><br />
         <p class="text-[30px]">Updated frequently as more stations are built.</p>
     </div>
 </a>

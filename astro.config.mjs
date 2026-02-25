@@ -12,17 +12,17 @@ export default defineConfig({
         fonts: [{
             provider: fontProviders.google(),
             name: "Archivo",
-            cssVariable: "--font-archivo"
+            cssVariable: "--font-archivo-google"
         },
         {
             provider: fontProviders.google(),
             name: "Poppins",
-            cssVariable: "--font-poppins"
+            cssVariable: "--font-poppins-google"
         },
         {
             provider: fontProviders.google(),
             name: "Atkinson Hyperlegible Next",
-            cssVariable: "--font-atkinson"
+            cssVariable: "--font-atkinson-google"
         }]
     }
 });
