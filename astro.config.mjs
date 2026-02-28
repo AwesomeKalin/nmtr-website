@@ -3,8 +3,6 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
-import playformInline from "@playform/inline";
-
 // https://astro.build/config
 export default defineConfig({
   vite: {
@@ -28,6 +26,4 @@ export default defineConfig({
           cssVariable: "--font-atkinson-google"
       }]
   },
-
-  integrations: [playformInline()]
 });
