@@ -1,0 +1,54 @@
+---
+import HistoryOne from "./history/HistoryOne.astro";
+import HistoryTwo from "./history/HistoryTwo.astro";
+import HistoryThree from "./history/HistoryThree.astro";
+import HistoryFour from "./history/HistoryFour.astro";
+import HistoryFive from "./history/HistoryFive.astro";
+import HistorySix from "./history/HistorySix.astro";
+import HistorySeven from "./history/HistorySeven.astro";
+import HistoryEight from "./history/HistoryEight.astro";
+import HistoryNine from "./history/HistoryNine.astro";
+
+import { Picture } from "astro:assets";
+import stanleyIsland from "../../img/stanley_island.png";
+import cityOfMitakihara from "../../img/city_of_mitakihara.png";
+---
+
+<section
+    class="py-15 px-10 max-w-250 my-0 mx-auto opacity-0 translate-y-6.25 transition-all duration-800 ease-out fade-in delay-150"
+>
+    <h2
+        class="text-[40px] font-archivo mb-6.25 text-center opacity-0 translate-y-6.25 transition-all duration-800 ease-out fade-in delay-300"
+    >
+        History
+    </h2>
+
+    <HistoryOne />
+    <HistoryTwo />
+
+    <Picture
+        src={stanleyIsland}
+        formats={["avif", "webp", "png"]}
+        layout="constrained"
+        alt="Stanley Island"
+        class="block my-1/2 mx-auto w-9/10 max-w-212.5 border-[#222] border-2 border-solid bg-[#111] object-cover rounded-md opacity-0 translate-y-6.25 transition-all duration-800 ease-out fade-in hover:scale-105"
+        loading="lazy"
+    />
+
+    <HistoryThree />
+    <HistoryFour />
+    <HistoryFive />
+    <HistorySix />
+    <HistorySeven />
+    <HistoryEight />
+    <HistoryNine />
+
+    <Picture
+        src={cityOfMitakihara}
+        formats={["avif", "webp", "png"]}
+        layout="constrained"
+        alt="Mitakihara City"
+        class="block my-1/2 mx-auto w-9/10 max-w-212.5 border-[#222] border-2 border-solid bg-[#111] object-cover rounded-md opacity-0 translate-y-6.25 transition-all duration-800 ease-out fade-in hover:scale-105"
+        loading="lazy"
+    />
+</section>

@@ -1,0 +1,37 @@
+---
+import AboutSections from "../components/about/AboutSections.astro";
+import Layout from "../layouts/Layout.astro";
+import WhatIsNova from "../components/about/WhatIsNova.astro";
+import History from "../components/about/History.astro";
+import Mascot from "../components/about/Mascot.astro";
+---
+
+<Layout title="About">
+    <AboutSections
+        title="About NovaMTR"
+        description="Learn about NovaMTR, a community-driven Minecraft Transit Railway server built on creativity, personality, and a shared love for transit."
+    />
+    <WhatIsNova />
+    <History />
+    <AboutSections
+        title="Current State"
+        description="NovaMTR now has over 200 members, more than 35 builders, and 10 staff members. The network spans over 200 km, making it one of the fastest‑growing and most successful MTR servers."
+    />
+    <AboutSections
+        title="Main Features"
+        description="NovaMTR is known for its energetic and expressive community. Moderation is relaxed but firm on key rules, especially regarding the use of artificial intelligence. The server is LGBTQ+ friendly and aims to provide a safe, welcoming environment for all players."
+    />
+    <Mascot />
+    <AboutSections
+        title="Reception"
+        description="While formal reviews are not avaliable, community members consistently describe NovaMTR as a fun, creative, and diverse server with a wide range of building styles and personalities."
+    />
+    <AboutSections
+        title="CREDITS"
+        description="Server Creation: Quanti\n
+    Server Management: AwesomeKalin55\n
+    Moderation: Rewcat, Curt, Sakuya, Mahmoud, Pinkcarb, Foxball, Quanti, Baykie\n
+    Notable Builders (or Network Planners): Kay, Iamjden2, Sakuya, Nobody, KangreLeo, Jelly&Jack, Rewcat, Kangre, Foxball, Kraka, Baykie, Quanti\n
+    Website Creator: Pinkcarb"
+    />
+</Layout>
