@@ -1,0 +1,136 @@
+---
+import CarouselCard from "./CarouselCard.astro";
+
+import Expo from "../../img/Expo.png";
+import JGardens from "../../img/JGardens.png";
+import Eastminster from "../../img/eastminster.png";
+import NaritasVolcano from "../../img/naritas_volcano.png";
+import StPancake from "../../img/st_pancake.png";
+import SouthgoldIsland from "../../img/southgold_island.png";
+import Spawn from "../../img/Spawn.png";
+import KirasuiGardens from "../../img/KirasuiGardens.png";
+import Basehill from "../../img/basehill.png";
+import SpawnCity from "../../img/spawncity.png";
+import Helston from "../../img/helston.png";
+import MitakiharaCentral from "../../img/mitakihara_central.png";
+import CityOfMitakihara from "../../img/city_of_mitakihara.png";
+import MtHaven from "../../img/mt_haven.png";
+import StPenta from "../../img/st_penta.png";
+import SpawntownWaterloo from "../../img/spawntown_waterloo.png";
+
+const images = [
+    { name: "Expo", image: Expo },
+    { name: "Jacaranda Gardens", image: JGardens },
+    { name: "Eastminister", image: Eastminster },
+    { name: "Narita's Volcano", image: NaritasVolcano },
+    { name: "St. Pancake International", image: StPancake },
+    { name: "Southgold Island", image: SouthgoldIsland },
+    { name: "Spawn", image: Spawn },
+    { name: "Kirasui Gardens", image: KirasuiGardens },
+    { name: "Ocisi Basehill", image: Basehill },
+    { name: "Spawn City", image: SpawnCity },
+    { name: "Helston", image: Helston },
+    { name: "Mitakihara Central", image: MitakiharaCentral },
+    { name: "Mitakihara City", image: CityOfMitakihara },
+    { name: "Mt. Haven", image: MtHaven },
+    { name: "St Penta Transportation Centre", image: StPenta },
+    { name: "Spawntown Waterloo", image: SpawntownWaterloo },
+];
+---
+
+<section class="py-5 px-4 md:px-10 mt-10 mb-10">
+    <h2
+        class="font-bold text-4xl md:text-[40px] font-archivo text-center mt-10 mb-10"
+    >
+        Featured Stations
+    </h2>
+
+    <p
+        class="text-center text-base md:text-[20px] max-w-[90ch] md:max-w-[200ch] mx-auto mb-7.5"
+    >
+        These stations represent some of the most iconic builds across the
+        NovaMTR network. Scroll through to explore their unique designs and
+        atmospheres.
+    </p>
+
+    <!-- CAROUSEL TRACK -->
+    <div
+        class="stations-carousel flex gap-7.5 overflow-hidden pb-5 snap-x snap-mandatory scroll-smooth"
+    >
+        <!-- INDIVIDUAL STATION CARDS -->
+        {
+            images.map((item) => (
+                <CarouselCard name={item.name} image={item.image} />
+            ))
+        }
+    </div>
+
+    <!-- PAGINATION DOTS FOR CAROUSEL -->
+    <div class="stations-dots"></div>
+</section>
+
+<!-- CAROUSEL SCRIPT / CENTERING + DOT SYNC -->
+<script>
+    const carousel = document.querySelector(".stations-carousel");
+    const cards = Array.from(document.querySelectorAll(".station-card"));
+    const dotsContainer = document.querySelector(".stations-dots");
+
+    if (carousel && cards.length > 0 && dotsContainer) {
+        cards.forEach((card, index) => {
+            const dot = document.createElement("div");
+            dot.classList.add("stations-dot");
+            if (index === 0 || index === cards.length - 1) {
+                dot.classList.add("stations-dot", "min-[600px]:hidden");
+            }
+            dot.addEventListener("click", () => {
+                const cardRect = card.getBoundingClientRect();
+                const carouselRect = carousel.getBoundingClientRect();
+                const offset =
+                    card.offsetLeft -
+                    (carouselRect.width / 2 - cardRect.width / 2);
+                carousel.scrollTo({ left: offset, behavior: "smooth" });
+                setActiveDot(index);
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = Array.from(document.querySelectorAll(".stations-dot"));
+
+        function setActiveDot(activeIndex) {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === activeIndex);
+            });
+        }
+
+        const middleIndex = Math.floor(cards.length / 2);
+        const middleCard = cards[middleIndex];
+        const middleRect = middleCard.getBoundingClientRect();
+        const carouselRect = carousel.getBoundingClientRect();
+        const initialOffset =
+            middleCard.offsetLeft -
+            (carouselRect.width / 2 - middleRect.width / 2);
+        carousel.scrollTo({ left: initialOffset, behavior: "auto" });
+        setActiveDot(middleIndex);
+
+        let scrollTimeout;
+        carousel.addEventListener("scroll", () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                let closestIndex = 0;
+                let closestDistance = Infinity;
+                const center = carousel.scrollLeft + carouselRect.width / 2;
+
+                cards.forEach((card, index) => {
+                    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+                    const distance = Math.abs(center - cardCenter);
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestIndex = index;
+                    }
+                });
+
+                setActiveDot(closestIndex);
+            }, 100);
+        });
+    }
+</script>

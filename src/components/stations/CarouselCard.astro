@@ -1,0 +1,18 @@
+---
+import { Picture } from "astro:assets";
+const props = Astro.props;
+---
+
+<div
+    class="min-w-75 bg-[#111] border-2 border-solid border-[#222] snap-center cursor-pointer transition-all duration-300 hover:scale-105 hover:border-lightgreen station-card"
+>
+    <Picture
+        src={props.image}
+        alt={props.name}
+        formats={["avif", "webp", "jpeg"]}
+        class="w-full h-50 object-cover"
+        loading="lazy"
+        layout="constrained"
+    />
+    <h3 class="my-3.75 mx-0 font-archivo text-[24px] text-center">{props.name}</h3>
+</div>
