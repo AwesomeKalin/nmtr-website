@@ -3,20 +3,26 @@ import { Picture } from "astro:assets";
 import JGardens from "../../img/JGardens.png";
 ---
 
-<div class="relative w-full mt-15 ml-0 opacity-0 -translate-x-31.25 slide-left transition-all duration-800 ease-out translate-y-6.25 fade-in">
+<div
+  class="relative w-full mt-15 ml-0 opacity-0 -translate-x-31.25 slide-left transition-all duration-800 ease-out translate-y-6.25 fade-in"
+>
   <Picture
     src={JGardens}
     formats={["avif", "webp", "png"]}
     layout="full-width"
     alt="Jacaranda Gardens"
     class="w-full h-auto"
-    loading="lazy"
+    loading="eager"
+    fetchpriority="high"
   />
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-archivo text-center bg-black opacity-75 min-[600px]:px-6.25 min-[600px]:py-8.75 px-1 py-2 rounded-xl shadow-[0_5px_15px_rgba(0,0,0,1)] max-[600px]:w-full">
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-archivo text-center bg-black opacity-75 min-[600px]:px-6.25 min-[600px]:py-8.75 px-1 py-2 rounded-xl shadow-[0_5px_15px_rgba(0,0,0,1)] max-[600px]:w-full"
+  >
     <h2 class="min-[600px]:text-[45px] text-[25px] font-bold">What are we?</h2>
     <p class="min-[600px]:text-[30px] text-[15px]">
-      We are a fun and loving Minecraft server using MTR 4.<br>
-      We aim to create an enjoyable, safe and fun server both on Minecraft and Discord!<br>
+      We are a fun and loving Minecraft server using MTR 4.<br />
+      We aim to create an enjoyable, safe and fun server both on Minecraft and Discord!<br
+      />
       Join us today using the links below.
     </p>
   </div>
